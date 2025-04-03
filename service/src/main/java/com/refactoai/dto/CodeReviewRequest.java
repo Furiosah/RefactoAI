@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CodeReviewRequest {
-    private String language;
+    private String token;
     private String code;
     public CodeReviewRequest() {}
 }

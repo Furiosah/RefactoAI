@@ -17,8 +17,13 @@ camelRefacto = Flask(__name__)
 
 @camelRefacto.route('/refactor', methods=['POST'])
 def refactor():
-    os.environ["OPENAI_API_KEY"] = request.form.get('API_KEY')
-    user_input = request.form.get('code')
+    data = request.get_json()
+
+    # Retrieve token and code from the JSON data
+    token = data.get('token')
+    code = data.get('code')
+    os.environ["OPENAI_API_KEY"] = token
+    user_input = code
     
     model = ModelFactory.create(
         model_platform=ModelPlatformType.OPENAI,
