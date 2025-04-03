@@ -7,7 +7,7 @@ RefactoAI is an AI-powered code review and refactoring assistant. It helps devel
 ### **Backend**
 
 - **Spring Boot 3.x** - Java-based RESTful API
-- **Python + FastAPI** - AI-powered code analysis service
+- **Python** - AI-powered code analysis service
 - **Camel-AI** - Multi-agent framework for LLM integration
 - **WebClient** - Spring Boot HTTP client for API calls
 
@@ -49,13 +49,11 @@ cd RefactoAI
 cd backend
 mvn spring-boot:run
 ```
-
-#### FastAPI AI Server
+#### Python script
 ```bash
-cd ai-service
-pip install -r requirements.txt
-uvicorn main:app --reload
+python3 camelRefacto.py 
 ```
+
 ### **3️⃣ Frontend Setup (React + Vite)**
 ```bash
 cd frontend
@@ -74,23 +72,29 @@ npm run dev
 
 ```json
 {
-  "language": "java",
+  "token": "OPENAI_API_KEY",
   "code": "public class Test { ... }"
 }
 ```
 
 - **Response:**
 
-```json
-{
-  "optimized_code": "public class Test { /* Refactored Code */ }",
-  "suggestions": [
-    "Use meaningful variable names",
-    "Optimize loop conditions"
-  ]
-}
 ```
+Your  class is designed to search through directories and collect files that meet certain criteria defined in the `FileFilter`. However, there are a few issues in your code that need to be addressed for it to compile and function correctly. Below, I’ll suggest some improvements and corrections.
 
+Here’s the updated version of your `FileSearcher` class along with appropriate fixes:
+
+```java
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
+// Assuming these classes/interfaces already exist
+class Directory {
+```
+***
+### 👇COMING SOON 
 ### **2️⃣ Check API Status**
 
 **Endpoint:** `GET /api/status`
